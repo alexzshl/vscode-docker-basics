@@ -1,34 +1,72 @@
 {
-	"name": "docker",
-	"displayName": "%displayName%",
-	"description": "%description%",
-	"version": "1.0.0",
-	"publisher": "vscode",
-	"license": "MIT",
-	"engines": { "vscode": "*" },
-	"scripts": {
-		"update-grammar": "node ../../build/npm/update-grammar.js moby/moby contrib/syntax/textmate/Docker.tmbundle/Syntaxes/Dockerfile.tmLanguage ./syntaxes/docker.tmLanguage.json"
-	},
-	"contributes": {
-		"languages": [{
-			"id": "dockerfile",
-			"extensions": [ ".dockerfile", ".containerfile" ],
-			"filenames": [ "Dockerfile", "Containerfile" ],
-			"filenamePatterns": [ "Dockerfile.*", "Containerfile.*" ],
-			"aliases": [ "Docker", "Dockerfile", "Containerfile" ],
-			"configuration": "./language-configuration.json"
-		}],
-		"grammars": [{
-			"language": "dockerfile",
-			"scopeName": "source.dockerfile",
-			"path": "./syntaxes/docker.tmLanguage.json"
-		}],
-		"configurationDefaults": {
-			"[dockerfile]": {
-				"editor.quickSuggestions": {
-					"strings": true
-				}
-			}
-		}
-	}
+  "name": "docker",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "1.0.0",
+  "publisher": "vscode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "scripts": {
+    "update-grammar": "node ../../build/npm/update-grammar.js moby/moby contrib/syntax/textmate/Docker.tmbundle/Syntaxes/Dockerfile.tmLanguage ./syntaxes/docker.tmLanguage.json",
+    "vscode:prepublish": "npm run test",
+    "test": "node ./test/runTest.js"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "dockerfile",
+        "extensions": [
+          ".dockerfile",
+          ".containerfile"
+        ],
+        "filenames": [
+          "Dockerfile",
+          "Containerfile"
+        ],
+        "filenamePatterns": [
+          "Dockerfile.*",
+          "Containerfile.*"
+        ],
+        "aliases": [
+          "Docker",
+          "Dockerfile",
+          "Containerfile"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dockerfile",
+        "scopeName": "source.dockerfile",
+        "path": "./syntaxes/docker.tmLanguage.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[dockerfile]": {
+        "editor.quickSuggestions": {
+          "strings": true
+        }
+      }
+    }
+  },
+  "homepage": "https://code.visualstudio.com/",
+  "bugs": {
+    "url": "https://github.com/microsoft/vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode-docker.git"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.20",
+    "@types/vscode": "^1.52.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "vscode-test": "^1.4.1"
+  }
 }
