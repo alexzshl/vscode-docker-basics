@@ -2,7 +2,7 @@
 
 Provides syntax highlighting and bracket matching in Docker files.
 
-[![CI](https://github.com/microsoft/vscode-docker/workflows/CI/badge.svg)](https://github.com/microsoft/vscode-docker/actions)
+[![CI](https://github.com/microsoft/vscode-docker-basics/workflows/CI/badge.svg)](https://github.com/microsoft/vscode-docker-basics/actions)
 
 This extension is a built-in extension of [VS Code](https://github.com/microsoft/vscode).
 
